@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% if page.title %}
+        {{ page.title }} -
+        {% endif %}
+        {{ site.title }}
+    </title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/liuzheng/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/liuzheng/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="/static/liuzheng/js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+	tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] }
+    });
+    </script>
+    <script src="/static/liuzheng/js/jquery-2.2.0.min.js"></script>
+    <script src="/static/liuzheng/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div id="page-wrap">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container" style="width: 90%">
+            <div class="navbar-header">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    {% assign pages_list = site.pages %}
+                    {% assign group = 'navigation' %}
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="divider-vertical"></li>
+                    {% if site.author.github %}
+                    <li>
+                        <a href="https://github.com/{{ site.author.github }}" class="zocial github icon"
+                           target="_blank">
+                            <!--<p class="hidden-desktop">Github</p>-->
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.author.googleplus %}
+                    <li>
+                        <a href="https://plus.google.com/{{ site.author.googleplus }}" class="zocial googleplus icon"
+                           target="_blank">
+                            <!--<p class="hidden-desktop">Google+</p>-->
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.author.twitter %}
+                    <li>
+                        <a href="https://twitter.com/{{ site.author.twitter }}" class="zocial twitter icon"
+                           target="_blank">
+                            <!--<p class="hidden-desktop">Twitter</p>-->
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.author.facebook %}
+                    <li>
+                        <a href="http://www.facebook.com/{{ site.author.facebook }}" class="zocial facebook icon"
+                           target="_blank">
+                            <!--<p class="hidden-desktop">Facebook</p>-->
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.author.linkedin %}
+                    <li>
+                        <a href="http://www.linkedin.com/in/{{ site.author.linkedin }}" class="zocial linkedin icon"
+                           target="_blank">
+                            <!--<p class="hidden-desktop">LinkedIn</p>-->
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.author.feedburner %}
+                    <li>
+                        <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}" class="zocial rss icon"
+                           target="_blank">
+                            <!--<p class="hidden-desktop">FeedBurner</p>-->
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container" style="padding: 50px">
+        <div class="content">
+            {{ content }}
+        </div>
+    </div>
+    <!-- /container -->
+
+
+    <div class="footer-push">
+        <pre><code>$$
+\begin{aligned} \dot{x} &amp;= \sigma(y-x) \\\\
+\dot{y} &amp;= \rho x - y - xz \\\\
+\dot{z} &amp;= -\beta z + xy \end{aligned}
+$$
+</code></pre>
+    <p>$$
+\begin{aligned} \dot{x} &amp;= \sigma(y-x) \\
+\dot{y} &amp;= \rho x - y - xz \\
+\dot{z} &amp;= -\beta z + xy \end{aligned}
+$$</p></div>
+</div>
+<!--/.page-wrap -->
+
+<footer>
+    <div class="container">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+            with help from <a href="http://github.com/liuzheng712/jekyll" target="_blank">The Awesome-LZ Theme</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>

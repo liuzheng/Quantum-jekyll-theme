@@ -1,0 +1,5 @@
+theme :
+  name : liuzheng
+  js: /static/liuzheng/js
+  css: /static/liuzheng/css
+  fonts: /static/liuzheng/fonts

@@ -89,8 +89,18 @@
     <div class="dock-container2">
         <!--<a class="dock-item" href="#"><img src="css-dock-menu/images/home.png" alt="home"/><span>Home</span></a>-->
         <a class="dock-item2" href="#"><span>Home</span><img src="/static/liuzheng/images/home.png" alt="home"/></a>
-        <a class="dock-item2" href="#"><span>Home</span><img src="/static/liuzheng/images/home.png" alt="home"/></a>
-        <a class="dock-item2" href="#"><span>Home</span><img src="/static/liuzheng/images/home.png" alt="home"/></a>
+        <a class="dock-item2"
+           href="#"><span>Calendat</span><img src="/static/liuzheng/images/calendar.png" alt="calendar"/></a>
+        <a class="dock-item2" href="#"><span>Email</span><img src="/static/liuzheng/images/email.png" alt="email"/></a>
+        <a class="dock-item2"
+           href="#"><span>Histroy</span><img src="/static/liuzheng/images/history.png" alt="history"/></a>
+        <a class="dock-item2" href="#"><span>Music</span><img src="/static/liuzheng/images/music.png" alt="music"/></a>
+        <a class="dock-item2" href="#"><span>Portfolio</span><img src="/static/liuzheng/images/portfolio.png"
+                                                                  alt="portfolio"/></a>
+        <a class="dock-item2" href="#"><span>Link</span><img src="/static/liuzheng/images/link.png" alt="link"/></a>
+        <a class="dock-item2" href="#"><span>Video</span><img src="/static/liuzheng/images/video.png" alt="video"/></a>
+        <a class="dock-item2" href="{{ "/feed.xml" | prepend: site.baseurl }}"><span>RSS</span><img src="/static/liuzheng/images/rss.png" alt="RSS"/></a>
+
     </div>
 </div>
 <div id="page-wrap">
@@ -193,7 +203,7 @@
 </div>
 <!--/.page-wrap -->
 
-<footer>
+<footer style="position: fixed;bottom: 0;">
     <div class="container">
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
             with help from <a href="http://github.com/liuzheng712/Quantum-jekyll-theme" target="_blank">The Quantum jekyll Theme</a>

@@ -13,93 +13,76 @@
     {% endif %}
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/liuzheng/css/css-dock-menu.css" rel="stylesheet" type="text/css"/>
-
-    <link rel="stylesheet" type="text/css" href="static/liuzheng/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="static/liuzheng/css/bootstrap-theme.min.css">
-    <script type="text/javascript" src="static/liuzheng/js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    {% if site.useCDN %}
+    <link href="{{ '/static/liuzheng/css/css-dock-menu.css'| prepend: site.baseurl }}" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{{ '/static/liuzheng/css/bootstrap.min.css'| prepend: site.baseurl }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ '/static/liuzheng/css/bootstrap-theme.min.css'| prepend: site.baseurl }}">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-	tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] }
-    });
-
-
+    <script type="text/javascript"
+            src="{{ '/static/liuzheng/js/jquery-2.2.0.min.js'| prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ '/static/liuzheng/js/bootstrap.min.js'| prepend: site.baseurl }}"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+    <script type="text/javascript" src="{{ '/static/liuzheng/js/css-dock-menu.js'| prepend: site.baseurl }}"></script>
+    {% else %}
+    <link href="{{ '/static/liuzheng/css/css-dock-menu.css'| prepend: site.baseurl }}" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{{ '/static/liuzheng/css/bootstrap.min.css'| prepend: site.baseurl }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ '/static/liuzheng/css/bootstrap-theme.min.css'| prepend: site.baseurl }}">
+    <script type="text/javascript"
+            src="{{ '/static/liuzheng/js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'| prepend: site.baseurl }}">
     </script>
-    <script src="static/liuzheng/js/jquery-2.2.0.min.js"></script>
-    <script src="static/liuzheng/js/bootstrap.min.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>-->
-
-    <script type="text/javascript" src="static/liuzheng/js/css-dock-menu.js"></script>
-    <script type="text/javascript">
-        $(document).ready(
-                function () {
-                    $('#dock2').Fisheye(
-                            {
-                                maxWidth: 60,
-                                items: 'a',
-                                itemsText: 'span',
-                                container: '.dock-container2',
-                                itemWidth: 40,
-                                proximity: 80,
-                                alignment: 'left',
-                                valign: 'bottom',
-                                halign: 'center'
-                            }
-                    )
-                }
-        );
-    </script>
-
-    <script src="static/liuzheng/js/trianglify.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var pattern = Trianglify({
-                width: window.innerWidth,
-                height: window.innerHeight,
-                cell_size: 90,
-                variance: 1,
-                stroke_width: 1,
-                x_colors: 'random',
-                y_colors: 'random'
-            });
-            $('.background').append(pattern.canvas())
-        })
-    </script>
-    <style>
-        body {
-            width: 100%;
-            height: 100%;
-        }
-
-        .background {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            top: 0;
-            left: 0;
-        }
-    </style>
+    <script type="text/javascript"
+            src="{{ '/static/liuzheng/js/jquery-2.2.0.min.js'| prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ '/static/liuzheng/js/bootstrap.min.js'| prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ '/static/liuzheng/js/css-dock-menu.js'| prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ '/static/liuzheng/js/trianglify.min.js'| prepend: site.baseurl }}"></script>
+    {% endif %}
 </head>
 <body>
 <div class="background"></div>
-
-<div class="dock" id="dock2">
-    <div class="dock-container2">
-        <!--<a class="dock-item" href="#"><img src="css-dock-menu/images/home.png" alt="home"/><span>Home</span></a>-->
-        <a class="dock-item2" href="#"><span>Home</span><img src="static/liuzheng/images/home.png" alt="home"/></a>
-        <a class="dock-item2"
-           href="#"><span>Calendat</span><img src="static/liuzheng/images/calendar.png" alt="calendar"/></a>
-        <a class="dock-item2" href="#"><span>Email</span><img src="static/liuzheng/images/email.png" alt="email"/></a>
-        <a class="dock-item2"
-           href="#"><span>Histroy</span><img src="static/liuzheng/images/history.png" alt="history"/></a>
-        <a class="dock-item2" href="#"><span>Music</span><img src="static/liuzheng/images/music.png" alt="music"/></a>
-        <a class="dock-item2" href="#"><span>Portfolio</span><img src="static/liuzheng/images/portfolio.png"
-                                                                  alt="portfolio"/></a>
-        <a class="dock-item2" href="#"><span>Link</span><img src="static/liuzheng/images/link.png" alt="link"/></a>
-        <a class="dock-item2" href="#"><span>Video</span><img src="static/liuzheng/images/video.png" alt="video"/></a>
-        <a class="dock-item2" href="{{ "/feed.xml" | prepend: site.baseurl }}"><span>RSS</span><img src="static/liuzheng/images/rss.png" alt="RSS"/></a>
+<div class="dock" id="dock">
+    <div class="dock-container">
+        <a class="dock-item" href="#">
+            <span>Home</span>
+            <img src="{{ '/static/liuzheng/images/home.png'| prepend: site.baseurl }}" alt="home"/>
+        </a>
+        <a class="dock-item" href="#">
+            <span>Calendat</span>
+            <img src="{{ '/static/liuzheng/images/calendar.png'| prepend: site.baseurl }}" alt="calendar"/>
+        </a>
+        <a class="dock-item" href="#">
+            <span>Email</span>
+            <img src="{{ '/static/liuzheng/images/email.png'| prepend: site.baseurl }}" alt="email"/>
+        </a>
+        <a class="dock-item" href="#">
+            <span>Histroy</span>
+            <img src="{{ '/static/liuzheng/images/history.png'| prepend: site.baseurl }}" alt="history"/>
+        </a>
+        <a class="dock-item" href="#">
+            <span>Music</span>
+            <img src="{{ '/static/liuzheng/images/music.png'| prepend: site.baseurl }}" alt="music"/>
+        </a>
+        <a class="dock-item" href="#">
+            <span>Portfolio</span>
+            <img src="{{ '/static/liuzheng/images/portfolio.png'| prepend: site.baseurl }}" alt="portfolio"/>
+        </a>
+        <a class="dock-item" href="#">
+            <span>Link</span>
+            <img src="{{ '/static/liuzheng/images/link.png'| prepend: site.baseurl }}" alt="link"/>
+        </a>
+        <a class="dock-item" href="#">
+            <span>Video</span>
+            <img src="{{ '/static/liuzheng/images/video.png'| prepend: site.baseurl }}" alt="video"/>
+        </a>
+        <a class="dock-item" href="{{ '/feed.xml' | prepend: site.baseurl }}">
+            <span>RSS</span>
+            <img src="/static/liuzheng/images/rss.png" alt="RSS"/>
+        </a>
 
     </div>
 </div>
@@ -187,28 +170,19 @@
     <!-- /container -->
 
 
-    <div class="footer-push">
-        <pre><code>$$
-            \begin{aligned} \dot{x} &amp;= \sigma(y-x) \\\\
-            \dot{y} &amp;= \rho x - y - xz \\\\
-            \dot{z} &amp;= -\beta z + xy \end{aligned}
-            $$
-        </code></pre>
-        <p>$$
-            \begin{aligned} \dot{x} &amp;= \sigma(y-x) \\
-            \dot{y} &amp;= \rho x - y - xz \\
-            \dot{z} &amp;= -\beta z + xy \end{aligned}
-            $$</p>
-    </div>
+    <div class="footer-push"></div>
 </div>
 <!--/.page-wrap -->
 
 <footer style="position: fixed;bottom: 0;">
     <div class="container">
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-            with help from <a href="http://github.com/liuzheng712/Quantum-jekyll-theme" target="_blank">The Quantum jekyll Theme</a>
+            with help from <a href="http://github.com/liuzheng712/Quantum-jekyll-theme" target="_blank">The Quantum
+                jekyll Theme</a>
         </p>
     </div>
 </footer>
+<script src="{{ '/static/liuzheng/js/main.js'| prepend: site.baseurl }}"></script>
+
 </body>
 </html>

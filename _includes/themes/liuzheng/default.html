@@ -13,6 +13,8 @@
     {% endif %}
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/liuzheng/css/css-dock-menu.css" rel="stylesheet" type="text/css"/>
+
     <link rel="stylesheet" type="text/css" href="/static/liuzheng/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/liuzheng/css/bootstrap-theme.min.css">
     <script type="text/javascript" src="/static/liuzheng/js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -22,10 +24,33 @@
 	tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] }
     });
 
+
     </script>
     <script src="/static/liuzheng/js/jquery-2.2.0.min.js"></script>
     <script src="/static/liuzheng/js/bootstrap.min.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>-->
+
+    <script type="text/javascript" src="/static/liuzheng/js/css-dock-menu.js"></script>
+    <script type="text/javascript">
+        $(document).ready(
+                function () {
+                    $('#dock2').Fisheye(
+                            {
+                                maxWidth: 60,
+                                items: 'a',
+                                itemsText: 'span',
+                                container: '.dock-container2',
+                                itemWidth: 40,
+                                proximity: 80,
+                                alignment: 'left',
+                                valign: 'bottom',
+                                halign: 'center'
+                            }
+                    )
+                }
+        );
+    </script>
+
     <script src="/static/liuzheng/js/trianglify.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -46,6 +71,7 @@
             width: 100%;
             height: 100%;
         }
+
         .background {
             position: fixed;
             width: 100%;
@@ -58,6 +84,15 @@
 </head>
 <body>
 <div class="background"></div>
+
+<div class="dock" id="dock2">
+    <div class="dock-container2">
+        <!--<a class="dock-item" href="#"><img src="css-dock-menu/images/home.png" alt="home"/><span>Home</span></a>-->
+        <a class="dock-item2" href="#"><span>Home</span><img src="/static/liuzheng/images/home.png" alt="home"/></a>
+        <a class="dock-item2" href="#"><span>Home</span><img src="/static/liuzheng/images/home.png" alt="home"/></a>
+        <a class="dock-item2" href="#"><span>Home</span><img src="/static/liuzheng/images/home.png" alt="home"/></a>
+    </div>
+</div>
 <div id="page-wrap">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container" style="width: 90%">
@@ -153,14 +188,15 @@
             \begin{aligned} \dot{x} &amp;= \sigma(y-x) \\
             \dot{y} &amp;= \rho x - y - xz \\
             \dot{z} &amp;= -\beta z + xy \end{aligned}
-            $$</p></div>
+            $$</p>
+    </div>
 </div>
 <!--/.page-wrap -->
 
 <footer>
     <div class="container">
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-            with help from <a href="http://github.com/liuzheng712/jekyll" target="_blank">The Awesome-LZ Theme</a>
+            with help from <a href="http://github.com/liuzheng712/Quantum-jekyll-theme" target="_blank">The Quantum jekyll Theme</a>
         </p>
     </div>
 </footer>

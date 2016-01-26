@@ -79,7 +79,8 @@ jQuery.iFisheye = {
 					'mousemove',
 					function(e)
 					{
-						var pointer = jQuery.iUtil.getPointer(e);
+						var ee = event || window.event;
+						var pointer = {'x':ee.clientX,'y': ee.clientY};
 						var toAdd = 0;
 						if (el.fisheyeCfg.halign && el.fisheyeCfg.halign == 'center')
 							var posx = pointer.x - el.fisheyeCfg.pos.x - (el.offsetWidth - el.fisheyeCfg.itemWidth * el.fisheyeCfg.items.size())/2 - el.fisheyeCfg.itemWidth/2;

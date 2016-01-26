@@ -18,7 +18,7 @@ author:
   github:  liuzheng712
 
 theme: liuzheng
-useCDN: False
+useCDN: True
 
 # Build settings
 markdown: kramdown
